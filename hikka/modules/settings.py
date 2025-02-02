@@ -139,6 +139,8 @@ class CoreMod(loader.Module):
 
     @loader.command()
     async def setprefix(self, message: Message):
+        args = utils.get_args_raw(message)
+        
         if args.lower() == "none":
         	args = ""
         elif len(args.split()) == 2 and args.split()[0] == "dragon":
