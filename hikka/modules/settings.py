@@ -139,15 +139,18 @@ class CoreMod(loader.Module):
 
     @loader.command()
     async def setprefix(self, message: Message):
-        if not (args := utils.get_args_raw(message)):
-            args = ''
-
-        if len(args.split()) == 2 and args.split()[0] == "dragon":
+        if args.lower() == "none":
+        	args = ""
+        elif len(args.split()) == 2 and args.split()[0] == "dragon":
             args = args.split()[1]
             is_dragon = True
         else:
             is_dragon = False
-            
+
+        if len(args) >= 2:
+            await utils.answer(message, self.strings("prefix_incorrect"))
+            return
+
         if args == "s":
             await utils.answer(message, self.strings("prefix_incorrect"))
             return
