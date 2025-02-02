@@ -142,7 +142,7 @@ class CoreMod(loader.Module):
         args = utils.get_args_raw(message)
         
         if args.lower() == "none":
-        	args = ""
+        	args = " "
         elif len(args.split()) == 2 and args.split()[0] == "dragon":
             args = args.split()[1]
             is_dragon = True
