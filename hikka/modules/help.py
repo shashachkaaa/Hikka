@@ -270,10 +270,10 @@ class Help(loader.Module):
             for cmd in mod.commands:
                 cmd = cmd.split()[0]
                 if first:
-                    tmp += f": ( {cmd}"
+                    tmp += f": ( <code>{cmd}</code>"
                     first = False
                 else:
-                    tmp += f" | {cmd}"
+                    tmp += f" | <code>{cmd}</code>"
 
             dragon_ += [tmp + " )"]
 
@@ -316,10 +316,10 @@ class Help(loader.Module):
 
             for cmd in commands:
                 if first:
-                    tmp += f": ( {cmd}"
+                    tmp += f": ( <code>{cmd}</code>"
                     first = False
                 else:
-                    tmp += f" | {cmd}"
+                    tmp += f" | <code>{cmd}</code>"
 
             icommands = [
                 name
@@ -333,10 +333,10 @@ class Help(loader.Module):
 
             for cmd in icommands:
                 if first:
-                    tmp += f": ( 🤖 {cmd}"
+                    tmp += f": ( 🤖 <code>{cmd}</code>"
                     first = False
                 else:
-                    tmp += f" | 🤖 {cmd}"
+                    tmp += f" | 🤖 <code>{cmd}</code>"
 
             if commands or icommands:
                 tmp += " )"
